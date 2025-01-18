@@ -3,7 +3,7 @@ FROM debian:bookworm-slim
 COPY . /yasdi2mqtt
 
 RUN apt-get update && apt-get install -y git gcc make cmake openssl libssl-dev libcjson1 libcjson-dev libpaho-mqtt1.3 libpaho-mqtt-dev \
- && git clone --depth=1 https://github.com/pkwagner/yasdi.git yasdi \
+ && git clone --depth=1 https://github.com/matieke/yasdi.git yasdi \
  && mkdir yasdi/projects/generic-cmake/build-gcc && cd yasdi/projects/generic-cmake/build-gcc \
  && cmake -D YASDI_DEBUG_OUTPUT=0 .. && make && make install \
  && cd ../../../.. \
