@@ -9,7 +9,7 @@ RUN ln -s termios.h /usr/include/termio.h
 RUN mkdir -p /target/usr/local/bin
 
 # Install YASDI
-RUN git clone --depth=1 https://github.com/pkwagner/yasdi.git yasdi
+RUN git clone --depth=1 https://github.com/matieke/yasdi.git yasdi
 RUN mkdir yasdi/projects/generic-cmake/build
 RUN cd yasdi/projects/generic-cmake/build && cmake -D YASDI_DEBUG_OUTPUT=0 .. && make && make DESTDIR=/target install
 
